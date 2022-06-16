@@ -87,6 +87,9 @@
     "/8world/:category?": [
         "nczitzk"
     ],
+    "/91porn/:lang?": [
+        "TonyRL"
+    ],
     "/95mm/tab/:tab?": [
         "nczitzk"
     ],
@@ -175,6 +178,18 @@
     ],
     "/ash-maurya/ash-maurya": [
         "james-tindal"
+    ],
+    "/asiantolick/": [
+        "nczitzk"
+    ],
+    "/asiantolick/category/:id?": [
+        "nczitzk"
+    ],
+    "/asiantolick/tag/:id?": [
+        "nczitzk"
+    ],
+    "/asiantolick/search/:id?": [
+        "nczitzk"
     ],
     "/asus/bios/:model": [
         "Fatpandac"
@@ -374,6 +389,9 @@
     "/ciidbnu/:id?": [
         "nczitzk"
     ],
+    "/cn-healthcare/index": [
+        "qnloft"
+    ],
     "/cnbeta/": [
         "nczitzk"
     ],
@@ -452,6 +470,12 @@
     ],
     "/dhu/xxgk/news": [
         "KiraKiseki"
+    ],
+    "/diandong/news/:cate?": [
+        "Fatpandac"
+    ],
+    "/diandong/ddh/:cate?": [
+        "Fatpandac"
     ],
     "/disinfo/publications": [
         "nczitzk"
@@ -673,6 +697,9 @@
     "/ehentai/tag/:tag/:page?/:routeParams?": [
         "yindaheng98"
     ],
+    "/elasticsearch-cn/:params?": [
+        "nczitzk"
+    ],
     "/elsevier/:journal/latest": [
         "Derekmini",
         "sunwolf-swb"
@@ -791,6 +818,9 @@
         "StevenRCE0"
     ],
     "/getdr/": [
+        "nczitzk"
+    ],
+    "/getitfree/:category?": [
         "nczitzk"
     ],
     "/gf-cn/news/:category?": [
@@ -1070,6 +1100,26 @@
     "/hizu/:column?": [
         "nczitzk"
     ],
+    "/hk01/channel/:id": [
+        "hoilc",
+        "Fatpandac"
+    ],
+    "/hk01/hot": [
+        "hoilc",
+        "Fatpandac"
+    ],
+    "/hk01/issue/:id": [
+        "hoilc",
+        "Fatpandac"
+    ],
+    "/hk01/tag/:id": [
+        "hoilc",
+        "Fatpandac"
+    ],
+    "/hk01/zone/:id": [
+        "hoilc",
+        "Fatpandac"
+    ],
     "/hkej/:category?": [
         "TonyRL"
     ],
@@ -1184,6 +1234,15 @@
     "/iresearch/report": [
         "brilon",
         "Fatpandac"
+    ],
+    "/itch/devlog/:user/:id": [
+        "nczitzk"
+    ],
+    "/itch/posts/:topic/:id": [
+        "nczitzk"
+    ],
+    "/itch/:sort?/:tag?": [
+        "nczitzk"
     ],
     "/ithome/ranking/:type": [
         "immmortal",
@@ -1539,6 +1598,11 @@
     "/miris/blog": [
         "chazeon"
     ],
+    "/mirror/:id": [
+        "fifteen42",
+        "rde9",
+        "nczitzk"
+    ],
     "/mobilism/forums/:category/:type/:fulltext?": [
         "nitezs"
     ],
@@ -1549,6 +1613,9 @@
         "nczitzk"
     ],
     "/mox/:category?": [
+        "nczitzk"
+    ],
+    "/mp4er/:type?/:caty?/:area?/:year?/:order?": [
         "nczitzk"
     ],
     "/mpaypass/main/:type?": [
@@ -1568,6 +1635,9 @@
         "nczitzk"
     ],
     "/mygopen/:label?": [
+        "nczitzk"
+    ],
+    "/mysql/release/:version?": [
         "nczitzk"
     ],
     "/natgeo/dailyselection": [
@@ -1872,6 +1942,9 @@
     "/playno1/st/:catid?": [
         "TonyRL"
     ],
+    "/pmthinking/": [
+        "nczitzk"
+    ],
     "/polkaworld/polkaworld/newest": [
         "iceqing"
     ],
@@ -1995,6 +2068,14 @@
     "/sciencenet/user/:id": [
         "nczitzk"
     ],
+    "/scitation/:pub/:jrn": [
+        "Derekmini",
+        "auto-bot-ty"
+    ],
+    "/scitation/:pub/:jrn/:sec": [
+        "Derekmini",
+        "auto-bot-ty"
+    ],
     "/sdu/cmse/:type?": [
         "Ji4n1ng"
     ],
@@ -2045,6 +2126,9 @@
     "/sicau/zsjy/:category?": [
         "nczitzk"
     ],
+    "/sis001/forum/:id": [
+        "TonyRL"
+    ],
     "/sobooks/tag/:id?": [
         "nczitzk"
     ],
@@ -2080,6 +2164,10 @@
     "/spotify/top/artists": [
         "outloudvi"
     ],
+    "/springer/journal/:journal": [
+        "Derekmini",
+        "TonyRL"
+    ],
     "/sputniknews/:category?/:language?": [
         "nczitzk"
     ],
@@ -2104,6 +2192,9 @@
     ],
     "/sspai/series": [
         "HenryQW"
+    ],
+    "/sspai/series/:id": [
+        "TonyRL"
     ],
     "/sspai/shortcuts": [
         "Andiedie"
@@ -2208,6 +2299,9 @@
     ],
     "/tencent/qq/sdk/changelog/:platform": [
         "nuomi1"
+    ],
+    "/tencent/cloud/column/:id?/:tag?": [
+        "nczitzk"
     ],
     "/test/:id": [
         "DIYgod",
@@ -2750,6 +2844,9 @@
     "/zuel/notice": [
         "nczitzk"
     ],
+    "/zyshow/:region?/:id": [
+        "nczitzk"
+    ],
     "/1draw": [],
     "/benedictevans": [],
     "/bangumi/calendar/today": [],
@@ -3086,7 +3183,6 @@
     "/dytt/index": [],
     "/rs05/rs05": [],
     "/qutoutiao/category/:cid": [],
-    "/nhk/news_web_easy": [],
     "/bbc/:site?/:channel?": [],
     "/verge": [],
     "/pediy/topic/:category?/:type?": [],
@@ -3579,11 +3675,6 @@
     "/mcbbs/forum/:type": [],
     "/mcbbs/post/:tid/:authorid?": [],
     "/pocket/trending": [],
-    "/hk01/zone/:id": [],
-    "/hk01/channel/:id": [],
-    "/hk01/issue/:id": [],
-    "/hk01/tag/:id": [],
-    "/hk01/hot": [],
     "/manong-weekly": [],
     "/pork-price": [],
     "/noi": [],
@@ -4128,8 +4219,6 @@
     "/voa/day-photos": [],
     "/voa/:language/:channel?": [],
     "/6park/:id?/:type?/:keyword?": [],
-    "/mp4er/:type?/:caty?/:area?/:year?/:order?": [],
-    "/bde4/:type?/:caty?/:area?/:year?/:order?": [],
     "/sse/sserules/:slug?": [],
     "/gamegrape/:id?": [],
     "/chsi/zszcgd/:category?": [],
@@ -4230,7 +4319,6 @@
     "/bibgame/:category?/:type?": [],
     "/macau-bolsas/:lang?": [],
     "/potplayer/update/:language?": [],
-    "/zyshow/:name": [],
     "/caus/:category?": [],
     "/modian/zhongchou/:category?/:sort?/:status?": [],
     "/macwk/soft/:name": [],
@@ -4265,7 +4353,6 @@
     "/blogs/foreverblog": [],
     "/netflix/newsroom/:category?/:region?": [],
     "/sbs/chinese/:category?/:id?/:dialect?/:language?": [],
-    "/asiantolick/:category?/:keyword?": [],
     "/researchgate/publications/:id": [],
     "/questmobile/report/:category?/:label?": [],
     "/rss3/blog": [],
@@ -4273,6 +4360,5 @@
     "/dykszx/news/:type?": [],
     "/secrss/category/:category?": [],
     "/secrss/author/:author?": [],
-    "/fashionnetwork/headline/:country?": [],
-    "/mirror/:id": []
+    "/fashionnetwork/headline/:country?": []
 }

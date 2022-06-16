@@ -357,6 +357,19 @@
       }
     ]
   },
+  "91porn.com": {
+    "_name": "91porn",
+    ".": [
+      {
+        "title": "91porn",
+        "docs": "https://docs.rsshub.app/multimedia.html#_91porn",
+        "source": [
+          "/index.php"
+        ],
+        "target": "/91porn"
+      }
+    ]
+  },
   "95mm.org": {
     "_name": "MM范",
     ".": [
@@ -824,6 +837,42 @@
           "/"
         ],
         "target": "/ash-maurya"
+      }
+    ]
+  },
+  "asiantolick.com": {
+    "_name": "Asian to lick",
+    ".": [
+      {
+        "title": "首页",
+        "docs": "https://docs.rsshub.app/picture.html#asian-to-lick-shou-ye",
+        "source": [
+          "/"
+        ],
+        "target": "/asiantolick"
+      },
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/picture.html#asian-to-lick-fen-lei",
+        "source": [
+          "/"
+        ]
+      },
+      {
+        "title": "标签",
+        "docs": "https://docs.rsshub.app/picture.html#asian-to-lick-biao-qian",
+        "source": [
+          "/"
+        ]
+      },
+      {
+        "title": "搜索",
+        "docs": "https://docs.rsshub.app/picture.html#asian-to-lick-sou-suo",
+        "source": [
+          "/search/:keyword",
+          "/"
+        ],
+        "target": "/asiantolick/search/:keyword?"
       }
     ]
   },
@@ -1727,6 +1776,19 @@
       }
     ]
   },
+  "cn-healthcare.com": {
+    "_name": "健康界",
+    ".": [
+      {
+        "title": "首页-资讯",
+        "docs": "https://docs.rsshub.app/new-media.html#jian-kang-jie",
+        "source": [
+          "/"
+        ],
+        "target": "/cn-healthcare/index"
+      }
+    ]
+  },
   "cnbeta.com": {
     "_name": "cnBeta",
     ".": [
@@ -2051,6 +2113,27 @@
       }
     ]
   },
+  "diandong.com": {
+    "_name": "电动邦",
+    ".": [
+      {
+        "title": "资讯",
+        "docs": "https://docs.rsshub.app/new-media.html#dong-qiu-di",
+        "source": [
+          "/news"
+        ],
+        "target": "/diandong/news/:cate"
+      },
+      {
+        "title": "电动号",
+        "docs": "https://docs.rsshub.app/new-media.html#dong-qiu-di",
+        "source": [
+          "/news/ddh"
+        ],
+        "target": "/diandong/ddh/:cate"
+      }
+    ]
+  },
   "disinfo.eu": {
     "_name": "EU Disinfo Lab",
     ".": [
@@ -2203,6 +2286,12 @@
   "douyin.com": {
     "_name": "抖音",
     ".": [
+      {
+        "title": "标签",
+        "docs": "https://docs.rsshub.app/social-media.html#dou-yin",
+        "source": "/hashtag/:cid",
+        "target": "/douyin/hashtag/:cid"
+      },
       {
         "title": "博主",
         "docs": "https://docs.rsshub.app/social-media.html#dou-yin",
@@ -2699,6 +2788,20 @@
         "docs": "https://docs.rsshub.app/university.html#hua-dong-li-gong-ji-xu-jiao-yu-xue-yuan",
         "source": "/yeDaZhuanLan.aspx?pk=153",
         "target": "/ecust-jxjy/news"
+      }
+    ]
+  },
+  "elasticsearch.cn": {
+    "_name": "Elastic 中文社区",
+    ".": [
+      {
+        "title": "发现",
+        "docs": "https://docs.rsshub.app/bbs.html#elastic-zhong-wen-she-qu-fa-xian",
+        "source": [
+          "/:params",
+          "/"
+        ],
+        "target": "/elasticsearch-cn/:params"
       }
     ]
   },
@@ -3472,6 +3575,20 @@
           "/"
         ],
         "target": "/getdr"
+      }
+    ]
+  },
+  "getitfree.cn": {
+    "_name": "正版中国",
+    ".": [
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/shopping.html#zheng-ban-zhong-guo-fen-lei",
+        "source": [
+          "/category/:category",
+          "/"
+        ],
+        "target": "/getitfree/:category?"
       }
     ]
   },
@@ -4592,6 +4709,44 @@
       }
     ]
   },
+  "hk01.com": {
+    "_name": "香港01",
+    "www": [
+      {
+        "title": "最 Hit",
+        "docs": "https://docs.rsshub.app/traditional-media.html#xiang-gang-01",
+        "source": [
+          "/hot",
+          "/"
+        ],
+        "target": "/hk01/hot"
+      },
+      {
+        "title": "zone",
+        "docs": "https://docs.rsshub.app/traditional-media.html#xiang-gang-01",
+        "source": "/zone/:id/:title",
+        "target": "/hk01/zone/:id"
+      },
+      {
+        "title": "channel",
+        "docs": "https://docs.rsshub.app/traditional-media.html#xiang-gang-01",
+        "source": "/channel/:id/:title",
+        "target": "/hk01/channel/:id"
+      },
+      {
+        "title": "issue",
+        "docs": "https://docs.rsshub.app/traditional-media.html#xiang-gang-01",
+        "source": "/issue/:id/:title",
+        "target": "/hk01/issue/:id"
+      },
+      {
+        "title": "tag",
+        "docs": "https://docs.rsshub.app/traditional-media.html#xiang-gang-01",
+        "source": "/tag/:id/:title",
+        "target": "/hk01/tag/:id"
+      }
+    ]
+  },
   "hkej.com": {
     "_name": "信报财经新闻",
     ".": [
@@ -5209,6 +5364,33 @@
       }
     ]
   },
+  "itch.io": {
+    "_name": "itch.io",
+    ".": [
+      {
+        "title": "Browse",
+        "docs": "https://docs.rsshub.app/game.html#itch-io-browse",
+        "source": [
+          "/"
+        ]
+      },
+      {
+        "title": "Developer Logs",
+        "docs": "https://docs.rsshub.app/game.html#itch-io-developer-logs",
+        "source": [
+          "/"
+        ]
+      },
+      {
+        "title": "Posts",
+        "docs": "https://docs.rsshub.app/game.html#itch-io-posts",
+        "source": [
+          "/t/:topic/:id"
+        ],
+        "target": "/itch/posts/:topic/:id"
+      }
+    ]
+  },
   "ithome.com": {
     "_name": "IT 之家",
     ".": [
@@ -5381,18 +5563,18 @@
     ]
   },
   "scitation.org": {
-    "_name": "JASA",
-    "asa": [
+    "_name": "scitation",
+    ".": [
       {
-        "title": "latest",
-        "docs": "https://docs.rsshub.app/journal.html#jasa",
-        "source": "/*",
-        "target": "/jasa/latest"
+        "title": "journal",
+        "docs": "https://docs.rsshub.app/journal.html#scitation",
+        "source": ":pub.scitation.org/toc/:jrn",
+        "target": "/scitation/:pub/:jrn"
       },
       {
         "title": "section",
-        "docs": "https://docs.rsshub.app/journal.html#jasa",
-        "source": "/*"
+        "docs": "https://docs.rsshub.app/journal.html#scitation",
+        "source": ":pub.scitation.org/toc/:jrn"
       }
     ]
   },
@@ -7174,6 +7356,19 @@
       }
     ]
   },
+  "mirror.xyz": {
+    "_name": "Mirror",
+    ".": [
+      {
+        "title": "User",
+        "docs": "https://docs.rsshub.app/new-media.html#mirror-user",
+        "source": [
+          "/:id",
+          "/"
+        ]
+      }
+    ]
+  },
   "mobilism.org": {
     "_name": "Mobilism",
     ".": [
@@ -7218,6 +7413,19 @@
           "/"
         ],
         "target": "/mox/:category?"
+      }
+    ]
+  },
+  "52bdys.com": {
+    "_name": "哔嘀影视",
+    ".": [
+      {
+        "title": "首页",
+        "docs": "https://docs.rsshub.app/multimedia.html#bi-di-ying-shi",
+        "source": [
+          "/"
+        ],
+        "target": "/mp4er/:type?/:caty?/:area?/:year?/:order?"
       }
     ]
   },
@@ -7289,6 +7497,18 @@
           "/"
         ],
         "target": "/mygopen/:label?"
+      }
+    ]
+  },
+  "mysql.com": {
+    "_name": "MySQL",
+    "dev": [
+      {
+        "title": "Release Notes",
+        "docs": "https://docs.rsshub.app/programming.html#mysql-release-notes",
+        "source": [
+          "/"
+        ]
       }
     ]
   },
@@ -7508,6 +7728,29 @@
           "/"
         ],
         "target": "/ngocn2/:category?"
+      }
+    ]
+  },
+  "nhk.or.jp": {
+    "_name": "NHK",
+    "www3": [
+      {
+        "title": "News Web Easy",
+        "docs": "https://docs.rsshub.app/traditional-media.html#nhk",
+        "source": [
+          "/news/easy/",
+          "/"
+        ],
+        "target": "/nhk/news_web_easy"
+      },
+      {
+        "title": "WORLD-JAPAN - 新闻提要",
+        "docs": "https://docs.rsshub.app/traditional-media.html#nhk",
+        "source": [
+          "/nhkworld/:lang/news/list/",
+          "/nhkworld/:lang/news/"
+        ],
+        "target": "/nhk/news/:lang"
       }
     ]
   },
@@ -8356,6 +8599,19 @@
       }
     ]
   },
+  "pmthinking.com": {
+    "_name": "产品沉思录",
+    ".": [
+      {
+        "title": "首页",
+        "docs": "https://docs.rsshub.app/new-media.html#chan-pin-chen-si-lu-shou-ye",
+        "source": [
+          "/"
+        ],
+        "target": "/pmthinking"
+      }
+    ]
+  },
   "polkaworld.org": {
     "_name": "PolkaWorld",
     "www": [
@@ -9064,6 +9320,18 @@
       }
     ]
   },
+  "sis001.com": {
+    "_name": "第一会所",
+    ".": [
+      {
+        "title": "子版块",
+        "docs": "https://docs.rsshub.app/bbs.html#di-yi-hui-suo",
+        "source": [
+          "/forum/:id"
+        ]
+      }
+    ]
+  },
   "sobooks.net": {
     "_name": "SoBooks",
     ".": [
@@ -9305,6 +9573,17 @@
       }
     ]
   },
+  "springer.com": {
+    "_name": "Springer",
+    "www": [
+      {
+        "title": "latest",
+        "docs": "https://docs.rsshub.app/journal.html#Springer",
+        "source": "/journal/:journal/*",
+        "target": "/springer/journal/:journal"
+      }
+    ]
+  },
   "sputniknews.cn": {
     "_name": "俄罗斯卫星通讯社",
     ".": [
@@ -9347,6 +9626,16 @@
         "docs": "https://docs.rsshub.app/new-media.html#shao-shu-pai-sspai",
         "source": "/series",
         "target": "/sspai/series"
+      },
+      {
+        "title": "付费专栏文章更新",
+        "docs": "https://docs.rsshub.app/new-media.html#shao-shu-pai-sspai",
+        "source": [
+          "/series/:id",
+          "/series/:id/list",
+          "/series/:id/metadata"
+        ],
+        "target": "/sspai/series/:id"
       },
       {
         "title": "Matrix",
@@ -9763,6 +10052,20 @@
         "docs": "https://docs.rsshub.app/social-media.html#telegram-telegram-blog",
         "source": "/blog",
         "target": "/telegram/blog"
+      }
+    ]
+  },
+  "tencent.com": {
+    "_name": "腾讯云",
+    ".": [
+      {
+        "title": "云+社区专栏",
+        "docs": "https://docs.rsshub.app/programming.html#teng-xun-yun-yun-she-qu-zhuan-lan",
+        "source": [
+          "/developer/column/:id",
+          "/developer/column/:id/:tag",
+          "/"
+        ]
       }
     ]
   },
@@ -11554,6 +11857,20 @@
       }
     ]
   },
+  "zyshow.net": {
+    "_name": "综艺秀",
+    ".": [
+      {
+        "title": "综艺",
+        "docs": "https://docs.rsshub.app/multimedia.html#zong-yi-xiu-zong-yi",
+        "source": [
+          "/:region/:id",
+          "/:id",
+          "/"
+        ]
+      }
+    ]
+  },
   "weibo.com": {
     "_name": "微博",
     ".": [
@@ -12778,44 +13095,6 @@
       }
     ]
   },
-  "hk01.com": {
-    "_name": "香港01",
-    "www": [
-      {
-        "title": "最 Hit",
-        "docs": "https://docs.rsshub.app/traditional-media.html#xiang-gang-01",
-        "source": [
-          "/hot",
-          "/"
-        ],
-        "target": "/hk01/hot"
-      },
-      {
-        "title": "zone",
-        "docs": "https://docs.rsshub.app/traditional-media.html#xiang-gang-01",
-        "source": "/zone/:id/:title",
-        "target": "/hk01/zone/:id"
-      },
-      {
-        "title": "channel",
-        "docs": "https://docs.rsshub.app/traditional-media.html#xiang-gang-01",
-        "source": "/channel/:id/:title",
-        "target": "/hk01/channel/:id"
-      },
-      {
-        "title": "issue",
-        "docs": "https://docs.rsshub.app/traditional-media.html#xiang-gang-01",
-        "source": "/issue/:id/:title",
-        "target": "/hk01/issue/:id"
-      },
-      {
-        "title": "tag",
-        "docs": "https://docs.rsshub.app/traditional-media.html#xiang-gang-01",
-        "source": "/tag/:id/:title",
-        "target": "/hk01/tag/:id"
-      }
-    ]
-  },
   "popiapp.cn": {
     "_name": "Popi 提问箱",
     "www": [
@@ -13231,16 +13510,6 @@
         "docs": "https://docs.rsshub.app/program-update.html#macwk",
         "source": "/soft/:name",
         "target": "/macwk/soft/:name"
-      }
-    ]
-  },
-  "zyshow.net": {
-    "www": [
-      {
-        "title": "",
-        "docs": "https://docs.rsshub.app/game.html#lv-fa-shi-ying-di",
-        "source": "/:name/",
-        "target": "/zyshow/:name"
       }
     ]
   }
