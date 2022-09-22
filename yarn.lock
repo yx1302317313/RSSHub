@@ -6674,10 +6674,10 @@ googleapis-common@^6.0.0:
     url-template "^2.0.8"
     uuid "^8.0.0"
 
-googleapis@102.0.0:
-  version "102.0.0"
-  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-102.0.0.tgz#3e7c2832e2754601fc998b7e1443ba1c3ef97cc6"
-  integrity sha512-XmTsfnC9PZsmkkzjVA/cTX/37D3VHTq/qZdmsyvKsZr4CcJ7JdZs4WUkwcAxkmWQ0tLXRfo7z6w+xdP/U2QAsA==
+googleapis@108.0.0:
+  version "108.0.0"
+  resolved "https://registry.yarnpkg.com/googleapis/-/googleapis-108.0.0.tgz#3c8626d0c693b10193e81f33b716e84a6118d844"
+  integrity sha512-wQuBzCObtjpfg3CksOfUlX3yT8clw/vJFdGSfs9cpn84WSxNK3U5sxYxEH3mPM+d+SrA8znKM9G8sOuwQceGIA==
   dependencies:
     google-auth-library "^8.0.2"
     googleapis-common "^6.0.0"
