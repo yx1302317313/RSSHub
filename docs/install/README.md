@@ -184,16 +184,16 @@ $ cd RSSHub
 
 下载完成后，需要安装依赖（开发不要加 `--production` 参数）
 
-使用 `npm`
-
-```bash
-$ npm ci --production
-```
-
-或 `yarn`
+使用 `yarn`
 
 ```bash
 $ yarn install --production
+```
+
+或 `npm`
+
+```bash
+$ npm ci --production
 ```
 
 由于众所周知的原因，在中国使用 `npm` 下载依赖十分缓慢，建议挂一个代理或者考虑使用 [NPM 镜像](https://npm.taobao.org/)
@@ -203,13 +203,13 @@ $ yarn install --production
 然后在 `RSSHub` 文件夹中运行下面的命令就可以启动
 
 ```bash
-$ npm start
+$ yarn start
 ```
 
 或
 
 ```bash
-$ yarn start
+$ npm start
 ```
 
 或使用 [PM2](https://pm2.keymetrics.io/docs/usage/quick-start/)
@@ -287,9 +287,15 @@ in pkgs.stdenv.mkDerivation {
 
 ## 部署到 Heroku
 
-### 注意：
+### 注意
 
-未验证支付方式的 heroku 账户每月仅有 550 小时额度（约 23 天），验证支付方式后可达每月 1000 小时。
+::: warning 更新
+
+Heroku [不再](https://blog.heroku.com/next-chapter) 提供免费服务。
+
+:::
+
+~~未验证支付方式的 heroku 账户每月仅有 550 小时额度（约 23 天），验证支付方式后可达每月 1000 小时。~~
 
 ### 一键部署（无自动更新）
 
@@ -305,6 +311,12 @@ in pkgs.stdenv.mkDerivation {
 ## 部署到 Vercel (Zeit Now)
 
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/DIYgod/RSSHub)
+
+## 部署到 PikaPods
+
+每月只需 1 美元即可运行 RSSHub。包括自动更新和 5 美元的免费起始额度。
+
+[![Run on PikaPods](https://www.pikapods.com/static/run-button.svg)](https://www.pikapods.com/pods?run=rsshub)
 
 ## 部署到 Google App Engine
 
@@ -413,7 +425,9 @@ gcloud app deploy
 
 `REQUEST_TIMEOUT`: 请求超时毫秒数，默认 `3000`
 
-`UA`: 用户代理，默认 `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36`
+`UA`: 用户代理，默认为随机用户代理用户代理（macOS 上的 Chrome）
+
+`NO_RANDOM_UA`: 是否禁用随机用户代理，默认 `null`
 
 ### 跨域请求
 
@@ -529,7 +543,15 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
 
 ### 图片处理
 
-`HOTLINK_TEMPLATE`: 用于处理描述中图片的 URL，绕过防盗链等限制，留空不生效。用法参考 [#2769](https://github.com/DIYgod/RSSHub/issues/2769)。可以使用 [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL#Properties) 的所有属性，格式为 JS 变量模板。例子：`${protocol}//${host}${pathname}`, `https://i3.wp.com/${host}${pathname}`
+::: tip 新配置方式
+
+我们正在试验新的，更灵活的配置方式。如果有需要，请转到 [通用参数 -> 多媒体处理](/parameter.html#duo-mei-ti-chu-li) 了解更多。
+
+在使用新配置时，请将下方环境变量留空。否则默认图片模版会继续遵循下方配置。
+
+:::
+
+`HOTLINK_TEMPLATE`: 用于处理描述中图片的 URL，绕过防盗链等限制，留空不生效。用法参考 [#2769](https://github.com/DIYgod/RSSHub/issues/2769)。可以使用 [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL#Properties) 的所有属性（加上后缀 `_ue` 则会对其进行 URL 编码），格式为 JS 变量模板。例子：`${protocol}//${host}${pathname}`, `https://i3.wp.com/${host}${pathname}`, `https://images.weserv.nl?url=${href_ue}`
 
 `HOTLINK_INCLUDE_PATHS`: 限制需要处理的路由，只有匹配成功的路由会被处理，设置多项时用英文逗号 `,` 隔开。若不设置，则所有路由都将被处理
 
@@ -544,6 +566,18 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
 也可带有路由参数，如 `/weibo/user/2612249974` 也是合法的。
 
 :::
+
+### 功能特性
+
+::: tip 测试特性
+
+这个板块控制的是一些新特性的选项，默认他们都是关闭的。如果有需要请阅读对应说明后按需开启
+
+:::
+
+`ALLOW_USER_HOTLINK_TEMPLATE`: [通用参数 -> 多媒体处理](/parameter.html#duo-mei-ti-chu-li)特性控制
+
+`FILTER_REGEX_ENGINE`: 控制 [通用参数 -> 内容过滤](/parameter.html#nei-rong-guo-lu) 使用的正则引擎。可选`[re2, regexp]`，默认`re2`。我们推荐公开实例不要调整这个选项，这个选项目前主要用于向后兼容。
 
 ### 其他应用配置
 
@@ -621,7 +655,12 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
     -   `EH_IPB_PASS_HASH`: E-Hentai 账户登录后 cookie 的 `ipb_pass_hash` 值
     -   `EH_SK`: E-Hentai 账户登录后 cookie 中的`sk`值
     -   `EH_IGNEOUS`: ExHentai 账户登录后 cookie 中的`igneous`值。若设置此值，RSS 数据将全部从里站获取
+    -   `EH_STAR`: E-Hentai 账户获得捐赠等级后将出现该 cookie。若设置此值，图片访问量限制将与账号关联而非 IP 地址
     -   `EH_IMG_PROXY`: 封面代理访问地址。若设置此值，封面图链接将被替换为以此值开头。使用 ExHentai 时，封面图需要有 Cookie 才能访问，在一些阅读软件上没法显示封面，可以使用此值搭配一个加 Cookie 的代理服务器实现阅读软件无 Cookie 获取封面图。
+
+-   Fantia
+
+    -   `FANTIA_COOKIE`: 登录后的 `cookie` , 可以在控制台中查看请求头获取。如果不填会导致部分需要登录后才能阅读的帖子获取异常
 
 -   Gitee 全部路由：[申请地址](https://gitee.com/api/v5/swagger)
 
@@ -642,6 +681,10 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
     -   `IG_PROXY`: Instagram 代理 URL。
 
     注意，暂**不支持**两步验证。
+
+-   Iwara:
+
+    -   `IWARA_COOKIE`: Iwara 登录后的 Cookie 值
 
 -   Last.fm 全部路由：[申请地址](https://www.last.fm/api/)
 
@@ -683,6 +726,10 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
 -   pixiv fanbox 用于获取付费内容
 
     -   `FANBOX_SESSION_ID`: 对应 cookies 中的`FANBOXSESSID`。
+
+-   Saraba1st 用于获取帖子里的图片
+
+    -   `SARABA1ST_COOKIE`: 对应网页端的 Cookie。
 
 -   Sci-hub 设置，用于科学期刊路由。
 
@@ -728,6 +775,10 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
         -   `YOUTUBE_CLIENT_ID`: YouTube API 的 OAuth 2.0 客户端 ID
         -   `YOUTUBE_CLIENT_SECRET`: YouTube API 的 OAuth 2.0 客户端 Secret
         -   `YOUTUBE_REFRESH_TOKEN`: YouTube API 的 OAuth 2.0 客户端 Refresh Token。可以按照[此 gist](https://gist.github.com/Kurukshetran/5904e8cb2361623498481f4a9a1338aa) 获取。
+
+-   ZodGame:
+
+    -   `ZODGAME_COOKIE`: ZodGame 登录后的 Cookie 值
 
 -   北大未名 BBS 全站十大
 

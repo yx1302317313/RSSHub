@@ -23,6 +23,20 @@ pageClass: routes
 
 </Route>
 
+## American Chemistry Society
+
+### Journal
+
+<Route author="nczitzk" example="/acs/journal/jacsat" path="/aom/journal/:id" :paramsDesc="['期刊 id，可在对应期刊页 URL 中找到']" supportScihub="1">
+
+::: tip 提示
+
+见 [Browse Content](https://pubs.acs.org)
+
+:::
+
+</Route>
+
 ## arXiv
 
 ### 搜索关键字
@@ -63,7 +77,7 @@ pageClass: routes
 
 ### 主刊
 
-<Route author="yech1990" example="/cell/cell/current" path="/journals/cell/cell/:category" supportScihub="1"/>
+<Route author="y9c" example="/cell/cell/current" path="/journals/cell/cell/:category" supportScihub="1"/>
 
 | `:category` |     类型说明    | 路由                                                         |
 | :---------: | :---------: | ---------------------------------------------------------- |
@@ -74,7 +88,7 @@ pageClass: routes
 
 ### 封面故事
 
-<Route author="yech1990" example="/cell/cover" path="/cell/cover" />
+<Route author="y9c" example="/cell/cover" path="/cell/cover" />
 
 订阅 Cell 系列杂志的封面图片，并及时获取刊物更新状态。
 
@@ -100,17 +114,13 @@ pageClass: routes
 
 ## ELSEVIER
 
-### 最新文章
+### 期刊
 
-<Route author="Derekmini sunwolf-swb" example="/elsevier/signal-processing/latest" path="/elsevier/:journal/latest" :paramsDesc="['期刊名称，复制 URL 中 tocSection 部分']" radar="1" rssbud="1">
+<Route author="Derekmini sunwolf-swb" example="/elsevier/signal-processing" path="/elsevier/:journal" :paramsDesc="['期刊名称，URL 中 `/journal/` 后部分']" radar="1" rssbud="1"/>
 
-</Route>
+### 期刊指定卷
 
-### 指定卷中的文章
-
-<Route author="Derekmini sunwolf-swb" example="/elsevier/signal-processing/vol/192" path="/elsevier/:journal/vol/:id" :paramsDesc="['期刊名称，复制 URL 中 tocSection 部分','卷号 (如果 `Issue` 存在，使用 `Volume-Issue`, e.g., `/elsevier/aace-clinical-case-reports/vol/7-6`)']" radar="1" rssbud="1">
-
-</Route>
+<Route author="Derekmini sunwolf-swb" example="/elsevier/signal-processing/192" path="/elsevier/:journal/:issue" :paramsDesc="['期刊名称，URL 中 `/journal/` 后部分','发行号 (如果 Volume 与 Issue 同时存在，采用 `Volume-Issue` 形式, e.g., `/elsevier/aace-clinical-case-reports/7-6`)']" radar="1" rssbud="1"/>
 
 ## IEEE Xplore
 
@@ -124,19 +134,13 @@ pageClass: routes
 
 </Route>
 
-### 最新文章
+### 期刊
 
-<Route author="Derekmini auto-bot-ty" example="/ieee/70/latest/vol" path="/ieee/:journal/latest/vol/:sortType?" :paramsDesc="['期刊名称，复制 URL 中 punumber 部分','排序方式，默认`vol-only-seq`，复制 URL 中 sortType 部分']" radar="1" rssbud="1">
+<Route author="Derekmini auto-bot-ty" example="/ieee/journal/70" path="/ieee/journal/:journal/:sortType?" :paramsDesc="['期刊代码，URL 中 `punumber` 部分','排序方式，默认`vol-only-seq`，URL 中 `sortType` 部分']" radar="1" rssbud="1"/>
 
-</Route>
+### 期刊（近两个月内文章）
 
-### 最新文章（近两个月）
-
-<Route author="Derekmini auto-bot-ty" example="/ieee/78/latest/date" path="/ieee/:journal/latest/date/:sortType?" :paramsDesc="['期刊名称，复制 URL 中 punumber 部分','排序方式，默认`vol-only-seq`，复制 URL 中 sortType 部分']" radar="1" rssbud="1">
-
-当期刊的文章条目过多时，按照 `vol-only-seq` 排序方式可能将近期更新文章淹没在旧条目中，故只筛选当前月与上个月内发表的文章。
-
-</Route>
+<Route author="Derekmini auto-bot-ty" example="/ieee/journal/78/recent" path="/ieee/journal/:journal/recent/:sortType?" :paramsDesc="['期刊代码，URL 中 `punumber` 部分','排序方式，默认`vol-only-seq`，URL 中 `sortType` 部分']" radar="1" rssbud="1"/>
 
 ## INFORMS
 
@@ -144,23 +148,11 @@ pageClass: routes
 
 <Route author="Fatpandac" example="/informs/mnsc" path="/informs/:category?" :paramsDesc="['类型, 可以在 url 中得到，默认为 `orsc`']"/>
 
-## JASA
+## MDPI
 
-### 最新文章
+### 期刊
 
-<Route author="Derekmini auto-bot-ty" example="/jasa/latest" path="/jasa/latest" radar="1" rssbud="1">
-
-</Route>
-
-### 专栏
-
-<Route author="Derekmini" example="/jasa/section/ANIMAL+BIOACOUSTICS" path="/jasa/section/:id" :paramsDesc="['专栏名称，复制 URL 中 tocSection 部分']" radar="1" rssbud="1">
-
-| Section | REFLECTIONS | ANIMAL BIOACOUSTICS | others |
-| :-----: | :---------: | :-----------------: | :----: |
-|  `:id`  | REFLECTIONS | ANIMAL+BIOACOUSTICS |   ...  |
-
-</Route>
+<Route author="Derekmini" example="/mdpi/analytica" path="/mdpi/:journal" :paramsDesc="['期刊名称，从期刊主页 URL 中获得']" radar="1" rssbud="1"/>
 
 ## Nature 系列
 
@@ -172,7 +164,7 @@ You can get all short name of a journal from <https://www.nature.com/siteindex> 
 
 ### 最新成果
 
-<Route author="yech1990 TonyRL" example="/nature/research/ng" path="/nature/research/:journal?" :paramsDesc="['期刊名简写，默认为 `nature`']" supportScihub="1" radar="1" rssbud="1"/>
+<Route author="y9c TonyRL" example="/nature/research/ng" path="/nature/research/:journal?" :paramsDesc="['期刊名简写，默认为 `nature`']" supportScihub="1" radar="1" rssbud="1"/>
 
 |   `:journal`  |             期刊名             | 路由                                                                                 |
 | :-----------: | :-------------------------: | ---------------------------------------------------------------------------------- |
@@ -195,7 +187,7 @@ You can get all short name of a journal from <https://www.nature.com/siteindex> 
 
 ### 新闻及评论
 
-<Route author="yech1990 TonyRL" example="/nature/news-and-comment/ng" path="/nature/news-and-comment/:journal" :paramsDesc="['期刊名简写']" supportScihub="1" radar="1" rssbud="1"/>
+<Route author="y9c TonyRL" example="/nature/news-and-comment/ng" path="/nature/news-and-comment/:journal" :paramsDesc="['期刊名简写']" supportScihub="1" radar="1" rssbud="1"/>
 
 |   `:journal`  |             期刊名             | 路由                                                                                                 |
 | :-----------: | :-------------------------: | -------------------------------------------------------------------------------------------------- |
@@ -216,7 +208,7 @@ You can get all short name of a journal from <https://www.nature.com/siteindex> 
 
 ### 封面故事
 
-<Route author="yech1990" example="/nature/cover" path="/nature/cover" />
+<Route author="y9c" example="/nature/cover" path="/nature/cover" />
 
 订阅 Nature 系列杂志的封面图片，并及时获取刊物更新状态。
 
@@ -224,11 +216,11 @@ You can get all short name of a journal from <https://www.nature.com/siteindex> 
 
 ### 主刊 - 新闻动态
 
-<Route author="yech1990 TonyRL" example="/nature/news" path="/nature/news" supportScihub="1" radar="1" rssbud="1"/>
+<Route author="y9c TonyRL" example="/nature/news" path="/nature/news" supportScihub="1" radar="1" rssbud="1"/>
 
 ### 精彩研究
 
-<Route author="yech1990 TonyRL" example="/nature/highlight" path="/nature/highlight/:journal?" :paramsDesc="['期刊名简写，默认为 `nature`']" supportScihub="1" radar="1" rssbud="1"/>
+<Route author="y9c TonyRL" example="/nature/highlight" path="/nature/highlight/:journal?" :paramsDesc="['期刊名简写，默认为 `nature`']" supportScihub="1" radar="1" rssbud="1"/>
 
 ::: warning 警告
 
@@ -252,7 +244,7 @@ You can get all short name of a journal from <https://www.nature.com/siteindex> 
 
 ### 最新文章（可筛选领域）
 
-<Route author="emdoe yech1990" example="/pnas/Applied Mathematics" path="/pnas/:topic" :paramsDesc="['领域名称','可从 pnas.org 获得']" supportScihub="1"/>
+<Route author="emdoe y9c" example="/pnas/Applied Mathematics" path="/pnas/:topic" :paramsDesc="['领域名称','可从 pnas.org 获得']" supportScihub="1"/>
 
 -   通过 `/pnas/` + “领域名称” 来获取对应 “领域” 的最新文章（Latest Research）。
     若参数置空（`/pnas`）或为 latest（`/pnas/latest`），则默认获取全部文章。
@@ -263,7 +255,7 @@ You can get all short name of a journal from <https://www.nature.com/siteindex> 
 
 ### Trending articles
 
-<Route author="yech1990 nczitzk" example="/pubmed/trending" path="/pubmed/trending/:filter?" :paramsDesc="['过滤条件，可在 URL 中找到']" supportScihub="1">
+<Route author="y9c nczitzk" example="/pubmed/trending" path="/pubmed/trending/:filter?" :paramsDesc="['过滤条件，可在 URL 中找到']" supportScihub="1">
 
 ::: tip 提示
 
@@ -279,37 +271,37 @@ You can get all short name of a journal from <https://www.nature.com/siteindex> 
 
 ### 本期刊物
 
-<Route author="yech1990" example="/sciencemag/current/science" path="/sciencemag/current/:journal" :paramsDesc="['期刊名简写']" supportScihub="1"/>
+<Route author="y9c TonyRL" example="/science/current/science" path="/science/current/:journal" :paramsDesc="['期刊名简写']" supportScihub="1" anticrawler="1" puppeteer="1" radar="1" rssbud="1"/>
 
-| `:journal` |               期刊名              | 路由                                                                                 |
-| :--------: | :----------------------------: | ---------------------------------------------------------------------------------- |
-|   science  |             Science            | [/sciencemag/current/science](https://rsshub.app/sciencemag/current/science)       |
-|  advances  |        Science Advances        | [/sciencemag/current/advances](https://rsshub.app/sciencemag/current/advances)     |
-| immunology |       Science Immunology       | [/sciencemag/current/immunology](https://rsshub.app/sciencemag/current/immunology) |
-|  robotics  |        Science Robotics        | [/sciencemag/current/robotics](https://rsshub.app/sciencemag/current/robotics)     |
-|    stke    |        Science Signaling       | [/sciencemag/current/stke](https://rsshub.app/sciencemag/current/stke)             |
-|     stm    | Science Translational Medicine | [/sciencemag/current/stm](https://rsshub.app/sciencemag/current/stm)               |
+|      简写     |               期刊名              | 路由                                                                             |
+| :---------: | :----------------------------: | ------------------------------------------------------------------------------ |
+|   science   |             Science            | [/science/current/science](https://rsshub.app/science/current/science)         |
+|    sciadv   |        Science Advances        | [/science/current/sciadv](https://rsshub.app/science/current/sciadv)           |
+|  sciimmunol |       Science Immunology       | [/science/current/sciimmunol](https://rsshub.app/science/current/sciimmunol)   |
+| scirobotics |        Science Robotics        | [/science/current/scirobotics](https://rsshub.app/science/current/scirobotics) |
+|  signaling  |        Science Signaling       | [/science/current/signaling](https://rsshub.app/science/current/signaling)     |
+|     stm     | Science Translational Medicine | [/science/current/stm](https://rsshub.app/science/current/stm)                 |
 
--   通过 `/sciencemag/current/` + “杂志简写” 来获取对应杂志最新一期的文章（Current Issue）。
-    若参数置空（`/sciencemag/current`），则默认获取主刊（Science）的最新文章。
+-   通过 `/science/current/` + "期刊名简写" 来获取对应杂志最新一期的文章（Current Issue）。
+    若参数置空（`/science/current`），则默认获取主刊（Science）的最新文章。
 
 </Route>
 
 ### 封面故事
 
-<Route author="yech1990" example="/sciencemag/cover" path="/sciencemag/cover" />
+<Route author="y9c TonyRL" example="/science/cover" path="/science/cover" anticrawler="1" radar="1" rssbud="1"/>
 
 订阅 Science 系列杂志的封面图片，并及时获取刊物更新状态。
 
-包含了： ‘Science’, 'Science Advances', 'Science Immunology', 'Science Robotics', 'Science Signaling' 和 'Science Translational Medicine'。
+包含了： 'Science', 'Science Advances', 'Science Immunology', 'Science Robotics', 'Science Signaling' 和 'Science Translational Medicine'。
 
 </Route>
 
-### 主刊 - 在线发表
+### 在线发表
 
-<Route author="yech1990" example="/sciencemag/early/science" path="/sciencemag/early/science" supportScihub="1"/>
+<Route author="y9c TonyRL" example="/science/early" path="/science/early/:journal?" :paramsDesc="['期刊名简写']" supportScihub="1" anticrawler="1" puppeteer="1" radar="1" rssbud="1"/>
 
-*仅支持 Science 主刊*
+*仅 Science, Science Immunology 和 Science Translational Medicine 提供在线发表*
 
 </Route>
 
@@ -323,11 +315,11 @@ You can get all short name of a journal from <https://www.nature.com/siteindex> 
 
 ### 期刊
 
-<Route author="Derekmini auto-bot-ty" example="/scitation/aapt/ajp" path="/:pub/:jrn" :paramsDesc="['出版社，URL 中 `scitation.org` 前部分','期刊，URL 中 `/toc/` 后部分']" radar="1" rssbud="1"/>
+<Route author="Derekmini auto-bot-ty" example="/scitation/aapt/ajp" path="/scitation/:pub/:jrn" :paramsDesc="['出版社，URL 中 `scitation.org` 前部分','期刊，URL 中 `/toc/` 后部分']" radar="1" rssbud="1" puppeteer="1"/>
 
 ### 专栏
 
-<Route author="Derekmini auto-bot-ty" example="/scitation/aapt/ajp/COMPUTATIONAL+PHYSICS" path="/:pub/:jrn/:sec" :paramsDesc="['出版社，URL 中 `scitation.org` 前部分','期刊，URL 中 `/toc/` 后部分','专栏，URL 中 `tocSection` 部分']" radar="1" rssbud="1"/>
+<Route author="Derekmini auto-bot-ty" example="/scitation/aapt/ajp/COMPUTATIONAL+PHYSICS" path="/scitation/:pub/:jrn/:sec" :paramsDesc="['出版社，URL 中 `scitation.org` 前部分','期刊，URL 中 `/toc/` 后部分','专栏，URL 中 `tocSection` 部分']" radar="1" rssbud="1" puppeteer="1"/>
 
 ## Springer
 
@@ -391,3 +383,7 @@ You can get all short name of a journal from <https://www.nature.com/siteindex> 
 ### 网络首发
 
 <Route author="Fatpandac" example="/cnki/journals/debut/LKGP" path="/cnki/journals/debut/:name" :paramsDesc="['期刊缩写，可以在网址中得到']"/>
+
+### 作者期刊文献
+
+<Route author="harveyqiu" example="/cnki/author/000042423923" path="/cnki/author/:code" :paramsDesc="['作者对应code，可以在网址中得到']"/>

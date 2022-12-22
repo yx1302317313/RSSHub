@@ -121,6 +121,59 @@ For instance, in <https://www.leboncoin.fr/recherche/?**category=10&locations=Pa
 
 </Route>
 
+## MyFigureCollection
+
+### 活動
+
+<Route author="nczitzk" example="/myfigurecollection/activity" path="/myfigurecollection/activity/:category?/:language?/:latestAdditions?/:latestEdits?/:latestAlerts?/:latestPictures?" :paramsDesc="['分类，见下表，默认为全部', '语言，见下表，默认为空，即 `en`', '最新加入，默认为开启，即 `1`，可选不开启，即 `0`', '變動，默认为开启，即 `1`，可选不开启，即 `0`', '通知，默认为开启，即 `1`，可选不开启，即 `0`', '圖片，默认为开启，即 `1`，可选不开启，即 `0`']">
+
+分类
+
+| Figures 一覽 | 物品 | 媒体 |
+| ---------- | -- | -- |
+| 0          | 1  | 2  |
+
+语言
+
+| id | 语言         |
+| -- | ---------- |
+|    | en         |
+| de | Deutsch    |
+| es | Español    |
+| fi | Suomeksi   |
+| fr | Français   |
+| it | Italiano   |
+| ja | 日本語        |
+| nl | Nederlands |
+| no | Norsk      |
+| pl | Polski     |
+| pt | Português  |
+| ru | Русский    |
+| sv | Svenska    |
+| zh | 中文         |
+
+</Route>
+
+### 資料庫
+
+<Route author="nczitzk" example="/myfigurecollection/figure" path="/myfigurecollection/:category?/:language?" :paramsDesc="['分类，默认为 Figures一覽', '语言，见上表，默认为空，即 `en`']">
+
+| Figures 一覽 | 物品    | 媒体    |
+| ---------- | ----- | ----- |
+| figures    | goods | media |
+
+</Route>
+
+### 圖片
+
+<Route author="nczitzk" example="/myfigurecollection/potd" path="/myfigurecollection/:category?/:language?" :paramsDesc="['分类，默认为每日圖片', '语言，见上表，默认为空，即 `en`']">
+
+| 每日圖片 | 每週圖片 | 每月圖片 |
+| ---- | ---- | ---- |
+| potd | potw | potm |
+
+</Route>
+
 ## ShopBack
 
 ### Store
@@ -292,9 +345,9 @@ For instance, in <https://www.leboncoin.fr/recherche/?**category=10&locations=Pa
 
 好价品类榜
 
-| 全部 | 时尚运动 | 3C 家电 | 食品家居 | 日百母婴 | 出行游玩 | 白菜 | 凑单品 |
-| -- | ---- | ----- | ---- | ---- | ---- | -- | --- |
-| 11 | 12   | 13    | 14   | 15   | 16   | 17 | 22  |
+| 全部 | 食品生鲜 | 电脑数码 | 运动户外 | 家用电器 | 白菜 | 服饰鞋包 | 日用百货 |
+| -- | ---- | ---- | ---- | ---- | -- | ---- | ---- |
+| 11 | 12   | 13   | 14   | 15   | 17 | 74   | 75   |
 
 好价电商榜
 
@@ -320,11 +373,17 @@ For instance, in <https://www.leboncoin.fr/recherche/?**category=10&locations=Pa
 | ----- | ---- | ---- | ---- |
 | hwall | zc   | nb   | hw   |
 
+-   时间跨度
+
+| 3 小时 | 12 小时 | 24 小时 |
+| ---- | ----- | ----- |
+| 3    | 12    | 24    |
+
 </Route>
 
 ### 好文
 
-<Route author="LogicJake" example="/smzdm/haowen/1" path="/smzdm/haowen/:day" :paramsDesc="['以天为时间跨度，默认为all，其余可以选择1，7，30，365']"/>
+<Route author="LogicJake" example="/smzdm/haowen/1" path="/smzdm/haowen/:day?" :paramsDesc="['以天为时间跨度，默认为 `all`，其余可以选择 `1`，`7`，`30`，`365`']"/>
 
 ### 好文分类
 
@@ -361,6 +420,12 @@ For instance, in <https://www.leboncoin.fr/recherche/?**category=10&locations=Pa
 | all | tech | agriculture | acg | design | love | tele | music | book | game | other |
 
 </Route>
+
+## 特斯拉中国
+
+### 价格
+
+<Route author="xiaokyo" example="/tesla/price" path="/tesla/price" radar="1"/>
 
 ## 玩物志
 

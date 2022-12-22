@@ -14,6 +14,12 @@ pageClass: routes
 
 <Route author="emdoe" example="/benedictevans" path="/benedictevans"/>
 
+## CSDN
+
+### 用户博客
+
+<Route author="Jkker" example="/csdn/blog/csdngeeknews" path="/csdn/blog/:user" radar="1" :paramsDesc="['`user` 为 CSDN 用户名，可以在主页 url 中找到']" />
+
 ## Google Sites
 
 ### 文章更新
@@ -30,6 +36,19 @@ pageClass: routes
 
 <Route author="cerebrater" example="/gwern/newest" path="/gwern/:category" :paramsDesc="['網誌主頁的分類訊息']"/>
 
+## hashnode
+
+### 用户博客
+
+<Route author="hnrainll" example="/hashnode/blog/inklings" path="/hashnode/blog/:username" :paramsDesc="['博主名称，用户头像 URL 中找到']">
+
+::: tip 提示
+
+username 为博主用户名，而非`xxx.hashnode.dev`中`xxx`所代表的 blog 地址。
+
+:::
+
+</Route>
 ## Hedwig.pub
 
 ### 博客
@@ -103,6 +122,12 @@ pageClass: routes
 ### 文章
 
 <Route author="CitrusIce" example="/phrack" path="/phrack" />
+
+## Polkadot
+
+### 博客
+
+<Route author="iceqing" example="/polkadot/blog" path="/polkadot/blog"/>
 
 ## PolkaWorld
 
@@ -279,9 +304,9 @@ pageClass: routes
 
 ## 十年之约
 
-### 文章
+### 专题展示 - 文章
 
-<Route author="7Wate" example="/blogs/foreverblog" path="/blogs/foreverblog" />
+<Route author="7Wate a180285" example="/foreverblog/feeds" path="/foreverblog/feeds" radar="1" rssbud="1" />
 
 ## 王五四文集
 
@@ -294,6 +319,12 @@ pageClass: routes
 ### 文章
 
 <Route author="junbaor SkiTiSu" example="/blogs/wangyin" path="/blogs/wangyin"/>
+
+## 优步
+
+### 工程技术
+
+<Route author="hulb" example="/uber/blog" path="/uber/blog/:maxPage?" :paramsDesc="['获取的最多页数，默认最多获取第一页']" />
 
 ## 雨苁博客
 

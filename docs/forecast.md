@@ -8,7 +8,7 @@ pageClass: routes
 
 ### Report
 
-<Route author="cxumol" example="/outagereport/ubisoft/5" path="/outagereport/:name/:count?" :paramsDesc="['服务名称｡ 拼写格式须与 URL 保持一致', '计数门槛｡ 仅当报告停服的人不低于此数量时, 才会写进 RSS']">
+<Route author="cxumol nczitzk" example="/outagereport/ubisoft/5" path="/outagereport/:name/:count?" :paramsDesc="['服务名称｡ 拼写格式须与 URL 保持一致', '计数门槛｡ 仅当报告停服的人不低于此数量时, 才会写进 RSS']">
 
 其中 name 参数，请略过本地服务的区域码，例如 `https://outage.report/us/verizon-wireless` 填入 `verizon-wireless` 即可｡
 
@@ -146,6 +146,19 @@ pageClass: routes
 | --------- | ----- |
 | 68        | 计划性停水 |
 | 69        | 突发性停水 |
+
+</Route>
+
+### 长沙市
+
+<Route author="shansing" example="/tingshuitz/changsha/78" path="/tingshuitz/changsha/:channelId?">
+
+可能仅限于中国大陆服务器访问，以实际情况为准。
+
+| channelId | 分类   |
+| --------- | ---- |
+| 78        | 计划停水 |
+| 157       | 抢修停水 |
 
 </Route>
 

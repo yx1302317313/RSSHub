@@ -184,16 +184,16 @@ $ cd RSSHub
 
 Execute the following commands to install dependencies (Do not add the `--production` parameter for development).
 
-Using `npm`
-
-```bash
-$ npm ci --production
-```
-
-Or `yarnv1` (not recommended)
+Using `yarnv1`
 
 ```bash
 $ yarn --production
+```
+
+or using `npm`
+
+```bash
+$ npm ci --production
 ```
 
 ### Launch
@@ -201,13 +201,12 @@ $ yarn --production
 Under `RSSHub`'s root directory, execute the following commands to launch
 
 ```bash
-$ npm start
+$ yarn start
 ```
 
 Or
-
 ```bash
-$ yarn start
+$ npm start
 ```
 
 Or use [PM2](https://pm2.io/docs/plus/quick-start/)
@@ -285,7 +284,13 @@ in pkgs.stdenv.mkDerivation {
 
 ### Notice
 
-Heroku accounts with unverified payment methods have only 550 hours of credit per month (about 23 days), and up to 1,000 hours per month with verified payment methods.
+::: warning Update
+
+Heroku [no longer](https://blog.heroku.com/next-chapter) offers free product plans.
+
+:::
+
+~~Heroku accounts with unverified payment methods have only 550 hours of credit per month (about 23 days), and up to 1,000 hours per month with verified payment methods.~~
 
 ### Instant deploy (without automatic update)
 
@@ -301,6 +306,12 @@ Heroku accounts with unverified payment methods have only 550 hours of credit pe
 ## Deploy to Vercel(Zeit Now)
 
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/DIYgod/RSSHub)
+
+## Deploy to PikaPods
+
+Run RSSHub from just $1/month. Includes automatic updates and $5 free starting credit.
+
+[![Run on PikaPods](https://www.pikapods.com/static/run-button.svg)](https://www.pikapods.com/pods?run=rsshub)
 
 ## Deploy to Google App Engine(GAE)
 
@@ -407,7 +418,9 @@ Configure RSSHub by setting environment variables
 
 `REQUEST_TIMEOUT`: milliseconds to wait for the server to end the response before aborting the request with error, default to `3000`
 
-`UA`: user agent, default to `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36`
+`UA`: user agent, using random user agent (Chrome on macOS) by default
+
+`NO_RANDOM_UA`: disable random user agent, default to `null`
 
 ### CORS Request
 
@@ -523,7 +536,15 @@ See the relation between access key/code and white/blacklisting.
 
 ### Image Processing
 
-`HOTLINK_TEMPLATE`: replace image URL in the description to avoid anti-hotlink protection, leave it blank to disable this function. Usage reference [#2769](https://github.com/DIYgod/RSSHub/issues/2769). You may use any property listed in [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL#Properties), format of JS template literal. e.g. `${protocol}//${host}${pathname}`, `https://i3.wp.com/${host}${pathname}`
+::: tip New Config Format
+
+We are currently testing out a new format, providing end-user with more flexibility. For more info, please refer to [Parameters->Multimedia processing](/en/parameter.html#multimedia-processing).
+
+When using our new config, please leave the following environment vairable blank. By default, image hotlink template will be forced when present.
+
+:::
+
+`HOTLINK_TEMPLATE`: replace image URL in the description to avoid anti-hotlink protection, leave it blank to disable this function. Usage reference [#2769](https://github.com/DIYgod/RSSHub/issues/2769). You may use any property listed in [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL#Properties) (suffixing with `_ue` results in URL encoding), format of JS template literal. e.g. `${protocol}//${host}${pathname}`, `https://i3.wp.com/${host}${pathname}`, `https://images.weserv.nl?url=${href_ue}`
 
 `HOTLINK_INCLUDE_PATHS`: limit the routes to be processed, only matched routes will be processed. Set multiple values with comma `,` as delimiter. If not set, all routes will be processed
 
@@ -539,6 +560,18 @@ It is also valid to contain route parameters, e.g. `/weibo/user/2612249974`.
 
 :::
 
+### Features
+
+::: tip Experimental features
+
+Configs in this sections are in beta stage, and are turn off by default. Please read corresponded description and turn on if necessary.
+
+:::
+
+`ALLOW_USER_HOTLINK_TEMPLATE`: [Parameters->Multimedia processing](/en/parameter.html#multimedia-processing)
+
+`FILTER_REGEX_ENGINE`: Define Regex engine used in [Parameters->filtering](/en/parameter.html#filtering). Valid value are `[re2, regexp]`. Default value is `re2`. We suggest public instance should leave this value to default, and this option right now is mainly for backward compatibility.
+
 ### Other Application Configurations
 
 `DISALLOW_ROBOT`: prevent indexing by search engine, default to enable, set false or 0 to disable
@@ -549,7 +582,7 @@ It is also valid to contain route parameters, e.g. `/weibo/user/2612249974`.
 
 `NODE_NAME`: node name, used for load balancing, identify the current node
 
-`PUPPETEER_WS_ENDPOINT`: browser WebSocket endpoint which can be used as an argument to puppeteer.connect, refer to [browserWSEndpoint](https://pptr.dev/#?product=Puppeteer&show=api-browserwsendpoint)
+`PUPPETEER_WS_ENDPOINT`: browser WebSocket endpoint which can be used as an argument to puppeteer.connect, refer to [browserWSEndpoint](https://pptr.dev/api/puppeteer.browser.wsendpoint)
 
 `CHROMIUM_EXECUTABLE_PATH`: path to the Chromium (or Chrome) executable. If puppeteer is not bundled with Chromium (manually skipped downloading or system architecture is arm/arm64), configuring this can effectively enable puppeteer. Or alternatively, if you prefer Chrome to Chromium, this configuration will help. **WARNING**: only effective when `PUPPETEER_WS_ENDPOINT` is not set; only useful for manual deployment, for Docker, please use the `chromium-bundled` image instead.
 
@@ -587,9 +620,14 @@ See docs of the specified route and `lib/config.js` for detailed information.
     -   `EH_IPB_MEMBER_ID`: The value of `ipb_member_id` in the cookie header after logging in E-Hentai
     -   `EH_IPB_PASS_HASH`: The value of `ipb_pass_hash` in the cookie header after logging in E-Hentai
     -   `EH_SK`: The value of `sk` in the cookie header after logging in E-Hentai
+    -   `EH_STAR`: The value of `star` in the cookie header if your account has stars. If this value is set, image limit allocation will links to the account rather than IP address
     -   `EH_IGNEOUS`: The value of `igneous` in the cookie header after logging in ExHentai. If this value is set, RSS will be generated from ExHentai
     -   `EH_IMG_PROXY`: Cover proxy address. If this is set, the link to the cover image will be replaced with this value at the beginning. When using ExHentai, the cover image requires cookies to access it, so you can use this with a cookie-added proxy server to access the cover image without cookies in some readers.
 
+-   Fantia
+
+    - `FANTIA_COOKIE`: The `cookie` after login can be obtained by viewing the request header in the console, If not filled in will cause some posts that require login to read to get exceptions
+    
 -   GitHub: [Access Token application](https://github.com/settings/tokens)
 
     -   `GITHUB_ACCESS_TOKEN`: GitHub Access Token
@@ -605,6 +643,10 @@ See docs of the specified route and `lib/config.js` for detailed information.
     -   `IG_PROXY`: Proxy URL for Instagram
 
     Warning: Two Factor Authentication is **not** supported.
+
+-   Iwara:
+
+    -   `IWARA_COOKIE`: Cookie of Iwara User
 
 -   Last.fm
 
@@ -683,3 +725,7 @@ See docs of the specified route and `lib/config.js` for detailed information.
         -   `YOUTUBE_CLIENT_ID`: YouTube API OAuth 2.0 client ID
         -   `YOUTUBE_CLIENT_SECRET`: YouTube API OAuth 2.0 client secret
         -   `YOUTUBE_REFRESH_TOKEN`: YouTube API OAuth 2.0 refresh token. Check [this gist](https://gist.github.com/Kurukshetran/5904e8cb2361623498481f4a9a1338aa) for detailed instructions.
+
+-   ZodGame:
+
+    -   `ZODGAME_COOKIE`: Cookie of ZodGame User
