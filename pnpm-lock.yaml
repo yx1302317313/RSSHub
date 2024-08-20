@@ -340,8 +340,8 @@ importers:
         specifier: 3.0.5
         version: 3.0.5
       nock:
-        specifier: 13.4.0
-        version: 13.4.0
+        specifier: 13.5.5
+        version: 13.5.5
       nodemon:
         specifier: 3.0.2
         version: 3.0.2
@@ -3618,8 +3618,8 @@ packages:
   no-case@2.3.2:
     resolution: {integrity: sha512-rmTZ9kz+f3rCvK2TD1Ue/oZlns7OGoIWP4fc3llxxRXlOkHKoWPPWJOfFYpITabSow43QJbRIoHQXtt10VldyQ==}
 
-  nock@13.4.0:
-    resolution: {integrity: sha512-W8NVHjO/LCTNA64yxAPHV/K47LpGYcVzgKd3Q0n6owhwvD0Dgoterc25R4rnZbckJEb6Loxz1f5QMuJpJnbSyQ==}
+  nock@13.5.5:
+    resolution: {integrity: sha512-XKYnqUrCwXC8DGG1xX4YH5yNIrlh9c065uaMZZHUoeUUINTOyt+x/G+ezYk0Ft6ExSREVIs+qBJDK503viTfFA==}
     engines: {node: '>= 10.13'}
 
   node-fetch@2.7.0:
@@ -4046,7 +4046,7 @@ packages:
   puppeteer@21.7.0:
     resolution: {integrity: sha512-Yy+UUy0b9siJezbhHO/heYUoZQUwyqDK1yOQgblTt0l97tspvDVFkcW9toBlnSvSfkDmMI3Dx9cZL6R8bDArHA==}
     engines: {node: '>=16.13.2'}
-    deprecated: < 22.6.4 is no longer supported
+    deprecated: < 22.8.2 is no longer supported
     hasBin: true
 
   pure-rand@6.0.2:
@@ -9274,7 +9274,7 @@ snapshots:
     dependencies:
       lower-case: 1.1.4
 
-  nock@13.4.0:
+  nock@13.5.5:
     dependencies:
       debug: 4.3.4(supports-color@5.5.0)
       json-stringify-safe: 5.0.1
